@@ -167,93 +167,36 @@
   }
   .divider::before, .divider::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent);}
 
-  /* ---------- Features grid ---------- */
+  /* ---------- Features ---------- */
   .features-grid{
     max-width:1180px; margin:0 auto; padding:0 28px;
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+    display:flex; flex-direction:column;
   }
-  .feature-card{
-    position:relative; border-radius:14px; overflow:hidden;
-    border:1px solid var(--line); cursor:default;
-    aspect-ratio:3/4;
-    transition:border-color .3s, box-shadow .3s, transform .3s;
-    background:var(--ink);
+  .feature-row{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:40px; align-items:center;
+    padding:28px 0;
+    border-bottom:1px solid var(--line-soft);
   }
-  .feature-card:hover{
-    border-color:var(--gold);
-    box-shadow:0 0 32px -6px var(--purple-glow), 0 0 0 1px rgba(214,162,63,0.3);
-    transform:translateY(-4px) scale(1.01);
-  }
-  /* full image */
+  .feature-row:last-child{border-bottom:none;}
+  .feature-row.reverse .feature-shot{order:2;}
+  .feature-row.reverse .feature-text{order:1;}
   .feature-shot{
-    position:absolute; inset:0;
+    border-radius:10px; overflow:hidden;
+    background:var(--ink); border:1px solid var(--line-soft);
   }
-  .feature-shot img{
-    width:100%; height:100%;
-    object-fit:contain; object-position:center;
-    transition:transform .5s ease, filter .5s ease;
-    filter:brightness(0.75) saturate(0.85);
-    padding:12px;
-    background:var(--ink);
+  .feature-shot img{width:100%; height:auto; display:block;}
+  .feature-text{padding:0 8px;}
+  .feature-text .num{
+    font-family:var(--display-sc); font-size:0.72rem;
+    color:var(--purple); letter-spacing:0.12em;
+    margin-bottom:8px; display:block;
   }
-  .feature-card:hover .feature-shot img{
-    transform:scale(1.04);
-    filter:brightness(0.32) saturate(0.6);
+  .feature-text h3{
+    font-family:var(--display); font-size:1.05rem;
+    font-weight:600; color:var(--gold-soft); margin:0 0 10px;
   }
-  /* gradient base — always visible at bottom */
-  .feature-card::before{
-    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(to top,
-      rgba(20,13,8,0.97) 0%,
-      rgba(20,13,8,0.65) 38%,
-      transparent 70%);
-    transition:opacity .35s;
-  }
-  /* vibrant purple shimmer on hover */
-  .feature-card::after{
-    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(135deg, rgba(139,92,246,0.28), rgba(214,162,63,0.08));
-    opacity:0; transition:opacity .35s;
-  }
-  .feature-card:hover::after{opacity:1;}
-
-  .feature-body{
-    position:absolute; bottom:0; left:0; right:0; z-index:2;
-    padding:20px;
-  }
-  .feature-body .num{
-    font-family:var(--display-sc); font-size:0.68rem; color:var(--purple);
-    letter-spacing:0.12em; margin-bottom:5px; display:block;
-    text-shadow:0 0 12px var(--purple-glow);
-    opacity:0; transform:translateY(6px);
-    transition:opacity .3s .05s, transform .3s .05s;
-  }
-  .feature-card:hover .feature-body .num{opacity:1; transform:translateY(0);}
-
-  .feature-body h3{
-    font-family:var(--display); font-size:1.05rem; font-weight:600;
-    color:var(--gold-soft); margin-bottom:7px; line-height:1.2;
-    text-shadow:0 2px 12px rgba(0,0,0,0.9);
-  }
-  .feature-body p{
-    font-size:0.84rem; color:var(--muted); line-height:1.5;
-    opacity:0; transform:translateY(10px);
-    transition:opacity .3s .08s, transform .3s .08s;
-    text-shadow:0 1px 8px rgba(0,0,0,0.9);
-  }
-  .feature-card:hover .feature-body p{opacity:1; transform:translateY(0);}
-
-  /* purple corner ornament */
-  .feature-card .corner{
-    position:absolute; top:12px; right:12px; z-index:2;
-    font-size:1rem; color:var(--purple); line-height:1;
-    text-shadow:0 0 10px var(--purple-glow);
-    opacity:0; transition:opacity .3s;
-  }
-  .feature-card:hover .corner{opacity:1;}
-
-  @media (max-width:980px){ .features-grid{grid-template-columns:repeat(2, 1fr);} }
-  @media (max-width:560px){ .features-grid{grid-template-columns:1fr; gap:14px;} }
+  .feature-text p{font-size:0.9rem; color:var(--muted); line-height:1.65; margin:0;}
 
   /* ---------- Premium / Community ---------- */
   .cta-grid{max-width:1180px; margin:0 auto; padding:0 28px; display:grid; grid-template-columns:1fr 1fr; gap:24px;}
@@ -309,6 +252,10 @@
     .section-head{margin-bottom:26px; padding:0 20px;}
     .section-head h2{font-size:1.4rem;}
     .features-grid{padding:0 20px;}
+    .feature-row{grid-template-columns:1fr; gap:14px;}
+    .feature-row.reverse .feature-shot{order:0;}
+    .feature-row.reverse .feature-text{order:0;}
+    .feature-text{padding:0;}
     .cta-grid{grid-template-columns:1fr; padding:0 20px; gap:18px;}
     .cta-card{padding:24px;}
     .legal-wrap{padding:0 20px;}
@@ -517,10 +464,11 @@ function applyLang(lang){
     const key = el.getAttribute('data-i18n-list');
     const items = dict[key];
     if(items) el.innerHTML = items.map((f,i)=>`
-      <div class="feature-card">
-        <div class="feature-shot"><img src="assets/${f.img}" alt="${f.title}" loading="lazy"></div>
-        <span class="corner">✦</span>
-        <div class="feature-body">
+      <div class="feature-row ${i % 2 === 1 ? 'reverse' : ''}">
+        <div class="feature-shot">
+          <img src="assets/${f.img}" alt="${f.title}" loading="lazy">
+        </div>
+        <div class="feature-text">
           <span class="num">${String(i+1).padStart(2,'0')}</span>
           <h3>${f.title}</h3>
           <p>${f.desc}</p>
