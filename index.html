@@ -55,14 +55,13 @@
     position:fixed; inset:0; z-index:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  section{position:relative; z-index:1;}
-  ::selection{background:var(--purple); color:#fff;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  section{position:relative;z-index:1;}
+  ::selection{background:var(--purple);color:#fff;}
 
-  /* ---------- Floating dice ---------- */
   .floating-die{
-    position:absolute; pointer-events:none;
+    position:absolute;pointer-events:none;
     filter:drop-shadow(0 10px 18px rgba(0,0,0,0.55));
     animation:float 8s ease-in-out infinite;
   }
@@ -70,280 +69,200 @@
     0%,100%{transform:translateY(0) rotate(0deg);}
     50%{transform:translateY(-16px) rotate(8deg);}
   }
-  /* Page-level decorative dice — fixed so they scroll with page feel */
   .page-die{
-    position:fixed; pointer-events:none; z-index:0;
+    position:fixed;pointer-events:none;z-index:0;
     filter:drop-shadow(0 8px 20px rgba(0,0,0,0.6));
     animation:float 8s ease-in-out infinite;
     opacity:0.18;
   }
-  .page-die.pd1{width:90px;  top:12%;  left:-18px;  animation-duration:9s;  animation-delay:0s;}
-  .page-die.pd2{width:60px;  top:38%;  right:-10px; animation-duration:11s; animation-delay:2s;}
-  .page-die.pd3{width:75px;  top:62%;  left:-14px;  animation-duration:10s; animation-delay:1s;}
-  .page-die.pd4{width:50px;  top:80%;  right:-6px;  animation-duration:8s;  animation-delay:3s;}
-  .page-die.pd5{width:65px;  top:24%;  right:10px;  animation-duration:12s; animation-delay:0.5s;}
+  .page-die.pd1{width:90px; top:12%; left:-18px; animation-duration:9s; animation-delay:0s;}
+  .page-die.pd2{width:60px; top:38%; right:-10px; animation-duration:11s; animation-delay:2s;}
+  .page-die.pd3{width:75px; top:62%; left:-14px; animation-duration:10s; animation-delay:1s;}
+  .page-die.pd4{width:50px; top:80%; right:-6px; animation-duration:8s; animation-delay:3s;}
+  .page-die.pd5{width:65px; top:24%; right:10px; animation-duration:12s; animation-delay:0.5s;}
 
   /* ---------- Nav ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(20,13,8,0.85);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line-soft);
-  }
-  nav{
-    max-width:1180px; margin:0 auto; padding:14px 28px;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-  }
-  .brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:700; font-size:1.05rem; letter-spacing:0.05em; color:var(--gold-soft);}
-  .brand img{width:32px; height:32px; object-fit:contain;}
-  .nav-links{display:flex; align-items:center; gap:30px;}
-  .nav-links a{font-family:var(--display-sc); font-size:0.82rem; color:var(--muted); font-weight:500; letter-spacing:0.04em; transition:color .2s; position:relative;}
+  header{position:sticky;top:0;z-index:50;background:rgba(20,13,8,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+  nav{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:0.05em;color:var(--gold-soft);}
+  .brand img{width:32px;height:32px;object-fit:contain;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-family:var(--display-sc);font-size:0.82rem;color:var(--muted);font-weight:500;letter-spacing:0.04em;transition:color .2s;position:relative;}
   .nav-links a:hover{color:var(--gold-soft);}
-  .nav-links a::after{content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--purple); transition:width .25s;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--purple);transition:width .25s;}
   .nav-links a:hover::after{width:100%;}
-  .lang-toggle{display:flex; align-items:center; gap:2px; border:1px solid var(--line); border-radius:999px; padding:3px; background:var(--surface);}
-  .lang-toggle button{border:none; background:transparent; color:var(--muted); font-family:var(--display-sc); font-size:0.72rem; font-weight:600; padding:6px 12px; border-radius:999px; cursor:pointer; transition:all .2s;}
-  .lang-toggle button.active{background:var(--purple); color:#fff;}
-  .menu-btn{display:none; background:none; border:none; color:var(--gold-soft); font-size:1.4rem; cursor:pointer;}
+  .lang-toggle{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface);}
+  .lang-toggle button{border:none;background:transparent;color:var(--muted);font-family:var(--display-sc);font-size:0.72rem;font-weight:600;padding:6px 12px;border-radius:999px;cursor:pointer;transition:all .2s;}
+  .lang-toggle button.active{background:var(--purple);color:#fff;}
+  .menu-btn{display:none;background:none;border:none;color:var(--gold-soft);font-size:1.4rem;cursor:pointer;}
 
-  @media (max-width:760px){
-    .nav-links{
-      position:fixed; top:60px; left:0; right:0;
-      background:var(--bg-soft); border-bottom:1px solid var(--line-soft);
-      flex-direction:column; align-items:flex-start; gap:0;
-      padding:8px 28px 18px;
-      transform:translateY(-130%); opacity:0; transition:all .25s; pointer-events:none;
-    }
-    .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
-    .nav-links a{padding:12px 0; width:100%; border-bottom:1px solid var(--line-soft);}
+  @media(max-width:760px){
+    .nav-links{position:fixed;top:60px;left:0;right:0;background:var(--bg-soft);border-bottom:1px solid var(--line-soft);flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 18px;transform:translateY(-130%);opacity:0;transition:all .25s;pointer-events:none;}
+    .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line-soft);}
     .menu-btn{display:block;}
   }
 
   /* ---------- Hero ---------- */
-  .hero{
-    max-width:1180px; margin:0 auto; padding:90px 28px 70px;
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
-    position:relative;
-  }
-  .eyebrow{
-    font-family:var(--display-sc); font-size:0.82rem; color:var(--ember-soft);
-    letter-spacing:0.14em; text-transform:uppercase;
-    display:flex; align-items:center; gap:10px; margin-bottom:22px;
-  }
-  .eyebrow::before{content:"⚜"; color:var(--purple); font-size:0.9rem;}
-  h1{
-    font-family:var(--display); font-weight:700;
-    font-size:clamp(2.1rem, 4.6vw, 3.3rem);
-    line-height:1.15; letter-spacing:0.01em; margin-bottom:20px;
-  }
-  h1 .accent{
-    background:linear-gradient(100deg, var(--gold-soft), var(--ember-soft));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .hero p.lead{font-size:1.08rem; color:var(--muted); max-width:520px; margin-bottom:30px;}
-  .hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:16px;}
-  .btn{
-    font-family:var(--display-sc); font-weight:600; font-size:0.88rem; letter-spacing:0.02em;
-    padding:13px 26px; border-radius:8px; cursor:pointer;
-    display:inline-flex; align-items:center; gap:8px;
-    transition:transform .18s, box-shadow .18s, background .18s;
-    border:1px solid transparent;
-  }
-  .btn-discord{background:linear-gradient(135deg, var(--purple), var(--purple-2)); color:#fff; box-shadow:0 8px 22px -8px rgba(139,92,246,0.6);}
-  .btn-discord:hover{transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(139,92,246,0.75);}
-  .btn-telegram{background:transparent; border-color:var(--line); color:var(--text);}
-  .btn-telegram:hover{border-color:var(--purple); color:var(--ember-soft); transform:translateY(-2px);}
-  .hero-note{font-family:var(--body); font-style:italic; font-size:0.88rem; color:var(--muted);}
-  .hero-note b{color:var(--gold-soft); font-weight:600; font-style:normal;}
-
-  .hero-art{position:relative; justify-self:center; width:100%; max-width:360px;}
-  .art-frame{
-    position:relative; border-radius:14px; overflow:hidden;
-    border:2px solid var(--line); box-shadow:0 30px 60px -20px rgba(0,0,0,0.7);
-  }
-  .art-frame::before{
-    content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
-    border:1px solid rgba(139,92,246,0.35); border-radius:13px; margin:5px;
-  }
-  .art-frame img{width:100%; height:100%; object-fit:cover;}
-  .hero-art .floating-die.d1{top:-30px; right:-24px; width:74px; opacity:0.85;}
-  .hero-art .floating-die.d2{bottom:-22px; left:-26px; width:54px; animation-delay:1.5s; opacity:0.7;}
+  .hero{max-width:1180px;margin:0 auto;padding:90px 28px 70px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;}
+  .eyebrow{font-family:var(--display-sc);font-size:0.82rem;color:var(--ember-soft);letter-spacing:0.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+  .eyebrow::before{content:"⚜";color:var(--purple);font-size:0.9rem;}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.15;letter-spacing:0.01em;margin-bottom:20px;}
+  h1 .accent{background:linear-gradient(100deg,var(--gold-soft),var(--ember-soft));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);max-width:520px;margin-bottom:30px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
+  .btn{font-family:var(--display-sc);font-weight:600;font-size:0.88rem;letter-spacing:0.02em;padding:13px 26px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .18s,box-shadow .18s,background .18s;border:1px solid transparent;}
+  .btn-discord{background:linear-gradient(135deg,var(--purple),var(--purple-2));color:#fff;box-shadow:0 8px 22px -8px rgba(139,92,246,0.6);}
+  .btn-discord:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(139,92,246,0.75);}
+  .btn-telegram{background:transparent;border-color:var(--line);color:var(--text);}
+  .btn-telegram:hover{border-color:var(--purple);color:var(--ember-soft);transform:translateY(-2px);}
+  .hero-note{font-family:var(--body);font-style:italic;font-size:0.88rem;color:var(--muted);}
+  .hero-note b{color:var(--gold-soft);font-weight:600;font-style:normal;}
+  .hero-art{position:relative;justify-self:center;width:100%;max-width:360px;}
+  .art-frame{position:relative;border-radius:14px;overflow:hidden;border:2px solid var(--line);box-shadow:0 30px 60px -20px rgba(0,0,0,0.7);}
+  .art-frame::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border:1px solid rgba(139,92,246,0.35);border-radius:13px;margin:5px;}
+  .art-frame img{width:100%;height:100%;object-fit:cover;}
+  .hero-art .floating-die.d1{top:-30px;right:-24px;width:74px;opacity:0.85;}
+  .hero-art .floating-die.d2{bottom:-22px;left:-26px;width:54px;animation-delay:1.5s;opacity:0.7;}
 
   /* ---------- Section heading ---------- */
-  .section-head{max-width:1180px; margin:0 auto; padding:0 28px; margin-bottom:44px; position:relative;}
+  .section-head{max-width:1180px;margin:0 auto;padding:0 28px;margin-bottom:44px;position:relative;}
   .section-head .eyebrow{margin-bottom:14px;}
-  .section-head h2{font-family:var(--display); font-size:clamp(1.6rem, 3vw, 2.1rem); font-weight:600; letter-spacing:0.01em; margin-bottom:14px;}
-  .section-head p{color:var(--muted); max-width:620px; font-size:1rem;}
-  section.block{padding:84px 0; position:relative;}
-  section.block.alt{background:var(--bg-soft); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
-  .divider{
-    max-width:1180px; margin:0 auto; padding:0 28px;
-    display:flex; align-items:center; gap:14px; color:var(--purple); opacity:0.5;
-    font-size:0.9rem;
+  .section-head h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600;letter-spacing:0.01em;margin-bottom:14px;}
+  .section-head p{color:var(--muted);max-width:620px;font-size:1rem;}
+  section.block{padding:84px 0;position:relative;}
+  section.block.alt{background:var(--bg-soft);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+  .divider{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:14px;color:var(--purple);opacity:0.5;font-size:0.9rem;}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+
+  /* ---------- Tag legend ---------- */
+  .tag-legend{
+    max-width:1180px; margin:0 auto 28px; padding:0 28px;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
   }
-  .divider::before, .divider::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent);}
+  .tag-legend span{font-family:var(--display-sc); font-size:0.72rem; color:var(--muted); letter-spacing:0.06em;}
+  .tag-legend-item{display:flex; align-items:center; gap:7px; font-family:var(--display-sc); font-size:0.72rem; letter-spacing:0.05em;}
+  .tag-legend-dot{width:8px; height:8px; border-radius:50%; flex-shrink:0;}
+  .tld-cmd  .tag-legend-dot{background:#8b5cf6;}
+  .tld-syn  .tag-legend-dot{background:#d6a23f;}
+  .tld-feat .tag-legend-dot{background:#2dd4bf;}
+  .tld-cmd  {color:#a78bfa;}
+  .tld-syn  {color:#f0c878;}
+  .tld-feat {color:#5eead4;}
 
   /* ---------- Features grid ---------- */
   .features-grid{
-    max-width:1180px; margin:0 auto; padding:0 28px;
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+    max-width:1180px;margin:0 auto;padding:0 28px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
   }
   .feature-card{
-    position:relative; border-radius:14px; overflow:hidden;
-    border:1px solid var(--line); cursor:pointer;
-    aspect-ratio:3/4;
-    transition:border-color .3s, box-shadow .3s, transform .3s;
-    background:var(--ink);
+    position:relative;
+    background:linear-gradient(160deg,var(--surface),var(--ink));
+    border:1px solid var(--line-soft);
+    border-radius:14px;
+    padding:24px 20px 20px;
+    display:flex;flex-direction:column;gap:11px;
+    transition:border-color .3s,box-shadow .3s,transform .25s;
+    overflow:hidden;
   }
-  .feature-card:hover{
-    border-color:var(--purple);
-    box-shadow:0 0 32px -6px var(--purple-glow), 0 0 0 1px rgba(139,92,246,0.3);
-    transform:translateY(-4px) scale(1.01);
-  }
-  .feature-shot{position:absolute; inset:0;}
-  .feature-shot img{
-    width:100%; height:100%;
-    object-fit:contain; object-position:center;
-    transition:transform .5s ease, filter .5s ease;
-    filter:brightness(0.75) saturate(0.85);
-    padding:12px;
-    background:var(--ink);
-  }
-  .feature-card:hover .feature-shot img{
-    transform:scale(1.04);
-    filter:brightness(0.28) saturate(0.5);
-  }
-  /* gradient — always visible at bottom */
   .feature-card::before{
-    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(to top,
-      rgba(16,11,6,0.98) 0%,
-      rgba(16,11,6,0.82) 32%,
-      rgba(16,11,6,0.35) 55%,
-      transparent 75%);
+    content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
+    background:linear-gradient(135deg,rgba(139,92,246,0.07),transparent 60%);
+    opacity:0;transition:opacity .3s;
   }
-  /* purple shimmer on hover */
-  .feature-card::after{
-    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
-    background:linear-gradient(135deg, rgba(139,92,246,0.22), rgba(214,162,63,0.06));
-    opacity:0; transition:opacity .35s;
-  }
-  .feature-card:hover::after{opacity:1;}
+  .feature-card:hover{border-color:var(--purple);box-shadow:0 0 28px -6px var(--purple-glow),0 0 0 1px rgba(139,92,246,0.18);transform:translateY(-3px);}
+  .feature-card:hover::before{opacity:1;}
 
-  .feature-body{
-    position:absolute; bottom:0; left:0; right:0; z-index:2;
-    padding:18px 18px 20px;
-  }
-  .feature-body .num{
-    font-family:var(--display-sc); font-size:0.68rem; color:var(--purple);
-    letter-spacing:0.12em; margin-bottom:5px; display:block;
-    text-shadow:0 0 12px var(--purple-glow);
-  }
-  .feature-body h3{
-    font-family:var(--display); font-size:1rem; font-weight:600;
-    color:var(--gold-soft); margin-bottom:6px; line-height:1.2;
-    text-shadow:0 2px 12px rgba(0,0,0,0.9);
-  }
-  .feature-body p{
-    font-size:0.82rem; color:var(--muted); line-height:1.5;
-    text-shadow:0 1px 8px rgba(0,0,0,0.9);
-    /* always visible */
-    opacity:1;
-    transition:opacity .3s;
-  }
-  /* on hover, text stays but image darkens — nice contrast boost */
-  .feature-card:hover .feature-body p{ opacity:1; }
+  .fc-glow{position:absolute;top:-30px;left:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.18),transparent 70%);pointer-events:none;}
 
-  .feature-card .zoom-hint{
-    position:absolute; top:12px; right:12px; z-index:3;
-    font-size:1rem; color:var(--purple); line-height:1;
-    text-shadow:0 0 10px var(--purple-glow);
-    opacity:0; transition:opacity .3s;
-  }
-  .feature-card:hover .zoom-hint{opacity:1;}
+  .fc-icon{font-size:1.9rem;line-height:1;display:inline-block;animation:float 7s ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(139,92,246,0.4));width:fit-content;}
+  .feature-card:nth-child(2) .fc-icon{animation-delay:.8s;animation-duration:8.5s;}
+  .feature-card:nth-child(3) .fc-icon{animation-delay:1.6s;animation-duration:6.5s;}
+  .feature-card:nth-child(4) .fc-icon{animation-delay:2.4s;animation-duration:9s;}
+  .feature-card:nth-child(5) .fc-icon{animation-delay:.4s;animation-duration:7.5s;}
+  .feature-card:nth-child(6) .fc-icon{animation-delay:1.2s;animation-duration:8s;}
+  .feature-card:nth-child(7) .fc-icon{animation-delay:2s;animation-duration:6s;}
+  .feature-card:nth-child(8) .fc-icon{animation-delay:2.8s;animation-duration:9.5s;}
 
-  @media (max-width:980px){ .features-grid{grid-template-columns:repeat(2, 1fr);} }
-  @media (max-width:560px){ .features-grid{grid-template-columns:1fr; gap:14px;} }
+  .fc-title{font-family:var(--display);font-size:0.92rem;font-weight:600;color:var(--gold-soft);line-height:1.2;}
+  .fc-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;flex:1;}
 
-  /* ---------- Lightbox ---------- */
-  .lightbox{
-    display:none; position:fixed; inset:0; z-index:200;
-    background:rgba(10,6,3,0.93);
-    align-items:center; justify-content:center;
-    padding:24px;
-    cursor:zoom-out;
+  .fc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;}
+
+  /* base tag */
+  .fc-tag{
+    font-family:'Courier New', monospace; font-size:0.68rem; font-weight:700;
+    padding:3px 9px; border-radius:5px;
+    white-space:nowrap; letter-spacing:0.02em;
+    border:1px solid transparent;
   }
-  .lightbox.open{display:flex;}
-  .lightbox img{
-    max-width:min(900px, 92vw); max-height:90vh;
-    object-fit:contain; border-radius:10px;
-    border:1px solid var(--line);
-    box-shadow:0 40px 80px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(139,92,246,0.2);
-    cursor:default;
+
+  /* comando — roxo vibrante */
+  .fc-tag.cmd{
+    color:#c4b5fd;
+    background:rgba(139,92,246,0.15);
+    border-color:rgba(139,92,246,0.4);
   }
-  .lightbox-close{
-    position:fixed; top:18px; right:22px;
-    font-size:1.6rem; color:var(--muted); cursor:pointer;
-    background:none; border:none; line-height:1;
-    transition:color .2s; z-index:201;
+  /* sintaxe — dourado */
+  .fc-tag.syn{
+    color:#fde68a;
+    background:rgba(214,162,63,0.12);
+    border-color:rgba(214,162,63,0.35);
   }
-  .lightbox-close:hover{color:var(--gold-soft);}
+  /* funcionalidade / conceito — teal */
+  .fc-tag.feat{
+    color:#5eead4;
+    background:rgba(45,212,191,0.1);
+    border-color:rgba(45,212,191,0.28);
+  }
+
+  @media(max-width:980px){.features-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.features-grid{grid-template-columns:1fr;gap:14px;} .tag-legend{gap:12px;}}
 
   /* ---------- Premium / Community ---------- */
-  .cta-grid{max-width:1180px; margin:0 auto; padding:0 28px; display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-  .cta-card{
-    position:relative; overflow:hidden;
-    background:linear-gradient(160deg, var(--surface), var(--surface-2));
-    border:1px solid var(--line); border-radius:16px; padding:36px;
-  }
-  .cta-card .floating-die{width:64px; top:-16px; right:-14px; opacity:0.4;}
-  .cta-card h3{font-family:var(--display); font-size:1.25rem; font-weight:600; margin-bottom:12px; color:var(--gold-soft);}
-  .cta-card p{color:var(--muted); margin-bottom:22px; font-size:0.95rem;}
-  .pill-link{
-    font-family:var(--display-sc); font-size:0.82rem; font-weight:600; padding:11px 22px; border-radius:8px;
-    border:1px solid var(--line); display:inline-flex; align-items:center; gap:6px;
-    transition:all .18s; letter-spacing:0.02em;
-  }
-  .pill-link:hover{border-color:var(--purple); color:var(--ember-soft); transform:translateY(-1px);}
-  .pill-link.primary{background:linear-gradient(135deg, var(--purple), var(--purple-2)); border-color:var(--purple); color:#fff;}
-  .pill-link.primary:hover{box-shadow:0 6px 18px -6px rgba(139,92,246,0.6); transform:translateY(-1px);}
+  .cta-grid{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .cta-card{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:16px;padding:36px;}
+  .cta-card .floating-die{width:64px;top:-16px;right:-14px;opacity:0.4;}
+  .cta-card h3{font-family:var(--display);font-size:1.25rem;font-weight:600;margin-bottom:12px;color:var(--gold-soft);}
+  .cta-card p{color:var(--muted);margin-bottom:22px;font-size:0.95rem;}
+  .pill-link{font-family:var(--display-sc);font-size:0.82rem;font-weight:600;padding:11px 22px;border-radius:8px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:6px;transition:all .18s;letter-spacing:0.02em;}
+  .pill-link:hover{border-color:var(--purple);color:var(--ember-soft);transform:translateY(-1px);}
+  .pill-link.primary{background:linear-gradient(135deg,var(--purple),var(--purple-2));border-color:var(--purple);color:#fff;}
+  .pill-link.primary:hover{box-shadow:0 6px 18px -6px rgba(139,92,246,0.6);transform:translateY(-1px);}
 
   /* ---------- Legal ---------- */
-  .legal-wrap{max-width:880px; margin:0 auto; padding:0 28px;}
-  .legal-tabs{display:flex; gap:10px; margin-bottom:24px;}
-  .legal-tabs button{
-    font-family:var(--display-sc); font-size:0.8rem; font-weight:600; color:var(--muted);
-    background:var(--surface); border:1px solid var(--line); border-radius:8px;
-    padding:10px 18px; cursor:pointer; transition:all .18s; letter-spacing:0.02em;
-  }
-  .legal-tabs button.active{background:var(--purple); border-color:var(--purple); color:#fff;}
-  .legal-panel{display:none; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:32px;}
+  .legal-wrap{max-width:880px;margin:0 auto;padding:0 28px;}
+  .legal-tabs{display:flex;gap:10px;margin-bottom:24px;}
+  .legal-tabs button{font-family:var(--display-sc);font-size:0.8rem;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 18px;cursor:pointer;transition:all .18s;letter-spacing:0.02em;}
+  .legal-tabs button.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+  .legal-panel{display:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:32px;}
   .legal-panel.active{display:block;}
-  .legal-panel h4{font-family:var(--display); font-size:1.02rem; margin:20px 0 8px; color:var(--gold-soft); font-weight:600;}
+  .legal-panel h4{font-family:var(--display);font-size:1.02rem;margin:20px 0 8px;color:var(--gold-soft);font-weight:600;}
   .legal-panel h4:first-child{margin-top:0;}
-  .legal-panel p, .legal-panel ul{color:var(--muted); font-size:0.92rem; margin-bottom:10px;}
+  .legal-panel p,.legal-panel ul{color:var(--muted);font-size:0.92rem;margin-bottom:10px;}
   .legal-panel ul{padding-left:20px;}
   .legal-panel li{margin-bottom:4px;}
 
   /* ---------- Footer ---------- */
-  footer{border-top:1px solid var(--line-soft); padding:44px 28px; text-align:center; color:var(--muted); font-size:0.88rem;}
-  footer .brand{justify-content:center; margin-bottom:14px;}
+  footer{border-top:1px solid var(--line-soft);padding:44px 28px;text-align:center;color:var(--muted);font-size:0.88rem;}
+  footer .brand{justify-content:center;margin-bottom:14px;}
   footer a{color:var(--ember-soft);}
   footer a:hover{text-decoration:underline;}
 
   /* ---------- Mobile ---------- */
-  @media (max-width:760px){
-    .hero{grid-template-columns:1fr; padding:40px 20px 50px; gap:32px;}
-    .hero-art{order:-1; max-width:240px; margin:0 auto;}
-    h1{font-size:clamp(1.8rem, 8vw, 2.3rem);}
-    .hero p.lead{font-size:1rem; max-width:100%;}
+  @media(max-width:760px){
+    .hero{grid-template-columns:1fr;padding:40px 20px 50px;gap:32px;}
+    .hero-art{order:-1;max-width:240px;margin:0 auto;}
+    h1{font-size:clamp(1.8rem,8vw,2.3rem);}
+    .hero p.lead{font-size:1rem;max-width:100%;}
     .hero-cta{width:100%;}
-    .hero-cta .btn{flex:1 1 auto; justify-content:center; text-align:center;}
+    .hero-cta .btn{flex:1 1 auto;justify-content:center;text-align:center;}
     section.block{padding:52px 0;}
-    .section-head{margin-bottom:26px; padding:0 20px;}
+    .section-head{margin-bottom:26px;padding:0 20px;}
     .section-head h2{font-size:1.4rem;}
     .features-grid{padding:0 20px;}
-    .cta-grid{grid-template-columns:1fr; padding:0 20px; gap:18px;}
+    .tag-legend{padding:0 20px;}
+    .cta-grid{grid-template-columns:1fr;padding:0 20px;gap:18px;}
     .cta-card{padding:24px;}
     .legal-wrap{padding:0 20px;}
     .legal-panel{padding:22px;}
@@ -357,19 +276,11 @@
 <body>
 
 <div class="grain"></div>
-
-<!-- Decorative page dice -->
 <img class="page-die pd1" src="assets/dice.png" alt="">
 <img class="page-die pd2" src="assets/dice.png" alt="">
 <img class="page-die pd3" src="assets/dice.png" alt="">
 <img class="page-die pd4" src="assets/dice.png" alt="">
 <img class="page-die pd5" src="assets/dice.png" alt="">
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
 <header>
   <nav>
@@ -416,6 +327,15 @@
     <h2 data-i18n="features.title">Tudo que sua mesa precisa.</h2>
     <p data-i18n="features.lead">Do convite ao primeiro D20, o GDI cobre cada etapa da sua sessão de RPG.</p>
   </div>
+
+  <!-- legenda das tags -->
+  <div class="tag-legend" data-i18n-legend>
+    <span data-i18n="legend.label">Legenda:</span>
+    <div class="tag-legend-item tld-cmd"><div class="tag-legend-dot"></div><span data-i18n="legend.cmd">Comando</span></div>
+    <div class="tag-legend-item tld-syn"><div class="tag-legend-dot"></div><span data-i18n="legend.syn">Sintaxe</span></div>
+    <div class="tag-legend-item tld-feat"><div class="tag-legend-dot"></div><span data-i18n="legend.feat">Funcionalidade</span></div>
+  </div>
+
   <div class="features-grid" data-i18n-list="features.items"></div>
 </section>
 
@@ -464,18 +384,14 @@
         <li>Only use one account for GDI</li>
       </ul>
       <p>We reserve the right to stop you from using GDI if we believe that you are violating this usage agreement.</p>
-      <h4>Affiliation</h4>
-      <p>GDI is not affiliated with or endorsed by Discord.</p>
-      <h4>Changes</h4>
-      <p>We may update these terms of service at any time. If you continue to use GDI after these terms are changed, you agree to the updated terms of service.</p>
+      <h4>Affiliation</h4><p>GDI is not affiliated with or endorsed by Discord.</p>
+      <h4>Changes</h4><p>We may update these terms of service at any time. If you continue to use GDI after these terms are changed, you agree to the updated terms of service.</p>
     </div>
     <div class="legal-panel" id="panelPrivacy">
       <h4>What end user data do we store?</h4>
       <p>We do not store any personally identifiable data. We may store partial message content and snowflake IDs for any commands you send, to provide our service.</p>
-      <h4>Who do we share data with?</h4>
-      <p>We do not share any data with third parties.</p>
-      <h4>How can I request data to be removed?</h4>
-      <p>As we do not store any personally identifiable data, you cannot request it to be removed.</p>
+      <h4>Who do we share data with?</h4><p>We do not share any data with third parties.</p>
+      <h4>How can I request data to be removed?</h4><p>As we do not store any personally identifiable data, you cannot request it to be removed.</p>
     </div>
   </div>
 </section>
@@ -483,12 +399,13 @@
 <footer>
   <div class="brand"><img src="assets/gdi-logo.png" alt="GDI"><span>GDI</span></div>
   <p data-i18n="footer.text">Um app de RPG para Discord e Telegram, feito para tornar sua mesa mais fácil de rodar.</p>
-  <p style="margin-top:10px;">
-    <a href="https://patreon.com/Maiq" target="_blank" rel="noopener">Patreon</a>
-  </p>
+  <p style="margin-top:10px;"><a href="https://patreon.com/Maiq" target="_blank" rel="noopener">Patreon</a></p>
 </footer>
 
 <script>
+// tag helper: {t:"texto", k:"cmd|syn|feat"}
+function tags(list){ return list.map(({t,k})=>`<span class="fc-tag ${k}">${t}</span>`).join(''); }
+
 const i18n = {
   pt: {
     "nav.features":"Funcionalidades","nav.premium":"Premium","nav.community":"Comunidade","nav.terms":"Termos",
@@ -497,17 +414,50 @@ const i18n = {
     "hero.lead":"Painéis prontos, comandos ou direto do chat. Monte sua ficha e prepare-se para rolar o dado, o GDI te guia na sua aventura.",
     "hero.addDiscord":"Adicionar no Discord","hero.addTelegram":"Adicionar no Telegram",
     "hero.note":'Dúvidas? Use o comando <b>/ajuda</b> a qualquer momento.',
+    "legend.label":"Legenda:","legend.cmd":"Comando","legend.syn":"Sintaxe","legend.feat":"Funcionalidade",
     "features.eyebrow":"Funcionalidades","features.title":"Tudo que sua mesa precisa.",
     "features.lead":"Do convite ao primeiro D20, o GDI cobre cada etapa da sua sessão de RPG.",
     "features.items":[
-      {"img":"gdi_tickets.png","title":"Tickets","desc":"Sistema de tickets para suporte e atendimento dentro da sua comunidade."},
-      {"img":"gdi_formulario.png","title":"Formulários","desc":"Formulários customizáveis, com as respostas registradas automaticamente."},
-      {"img":"gdi_rolagem.png","title":"Rolagem de dados","desc":"Qualquer fórmula de rolagem, com múltiplas rolagens e modificadores."},
-      {"img":"gdi_rolagemfalada.png","title":"Rolagem falada","desc":"Comandos de texto pra fala (TTS) para jogadores cegos rolarem dados."},
-      {"img":"gdi_iniciativa.png","title":"Sistema de iniciativa","desc":"Ordem de turnos automática, com HP e controle de NPCs e monstros."},
-      {"img":"gdi_geradordecall.png","title":"Gerador de Aventura","desc":"Crie, edite e gerencie suas mesas e sessões de campanha."},
-      {"img":"gdi_painelderolagem.png","title":"Painéis personalizados","desc":"Sistemas de rolagem sob medida pra cada cenário, como Call of Cthulhu."},
-      {"img":"gdi_ficha.png","title":"Ficha de jogador","desc":"Combate, atributos físicos, mentais e extras, tudo em um só lugar."}
+      {
+        "icon":"🎲","title":"Rolagem de Dados",
+        "desc":"Combine dados, bônus fixos e atributos da ficha numa única expressão. Suporta exploding, FATE, World of Darkness e TTS para acessibilidade.",
+        "tags":[{t:"/r",k:"cmd"},{t:"XdY+bônus",k:"syn"},{t:"d6!",k:"syn"},{t:"dfate",k:"syn"},{t:"tts",k:"feat"},{t:"WoD",k:"feat"}]
+      },
+      {
+        "icon":"⚔️","title":"Sistema de Iniciativa",
+        "desc":"Ordem de turnos automática com HP e controle de NPCs e monstros. Botões integrados para avançar turnos sem sair do chat.",
+        "tags":[{t:"/iniciativa",k:"cmd"},{t:"HP",k:"feat"},{t:"NPCs",k:"feat"},{t:"turnos",k:"feat"}]
+      },
+      {
+        "icon":"📋","title":"Ficha de Jogador",
+        "desc":"Ficha completa com atributos físicos, mentais e extras. Aplique dano e cura diretamente, exporte em JSON e importe em qualquer servidor.",
+        "tags":[{t:"/atributos",k:"cmd"},{t:"/ficha",k:"cmd"},{t:"/cura",k:"cmd"},{t:"/dano",k:"cmd"},{t:"JSON",k:"syn"}]
+      },
+      {
+        "icon":"🎛","title":"Painéis de Sistema",
+        "desc":"Painéis prontos para sistemas como Call of Cthulhu e D&D. Rolagens contextuais com um clique, sem digitar fórmulas.",
+        "tags":[{t:"/paineis",k:"cmd"},{t:"Call of Cthulhu",k:"feat"},{t:"D&D",k:"feat"}]
+      },
+      {
+        "icon":"🐉","title":"Hub de Aventura",
+        "desc":"Crie e gerencie mesas de voz pelo bot. Permissões mínimas e canais locais com controle total para o mestre.",
+        "tags":[{t:"/aventura",k:"cmd"},{t:"voz",k:"feat"},{t:"campanha",k:"feat"}]
+      },
+      {
+        "icon":"📝","title":"Formulários Dinâmicos",
+        "desc":"Formulários com botão e modal interativo. Respostas registradas automaticamente em canal ou DM.",
+        "tags":[{t:"/formulario criar",k:"cmd"},{t:"modal",k:"feat"},{t:"log automático",k:"feat"}]
+      },
+      {
+        "icon":"🎫","title":"Sistema de Tickets",
+        "desc":"Tickets em tópico privado com log de fechamento. Suporte, candidaturas e atendimento organizado para sua comunidade.",
+        "tags":[{t:"/tickets configurar",k:"cmd"},{t:"tópico privado",k:"feat"},{t:"log",k:"feat"}]
+      },
+      {
+        "icon":"🧮","title":"Utilitários",
+        "desc":"Calculadora de expressões matemáticas, timers com timestamp e ambientação dinâmica com reações automáticas no servidor.",
+        "tags":[{t:"/calc",k:"cmd"},{t:"/timer",k:"cmd"},{t:"/ambientacao",k:"cmd"},{t:"timestamp",k:"syn"}]
+      }
     ],
     "cta.eyebrow":"Apoio & Comunidade","cta.title":"Faça parte da aventura.",
     "community.title":"Comunidade no Discord",
@@ -527,17 +477,50 @@ const i18n = {
     "hero.lead":"Ready-made panels, commands, or straight from chat. Build your character sheet and get ready to roll, GDI guides you through your adventure.",
     "hero.addDiscord":"Add to Discord","hero.addTelegram":"Add to Telegram",
     "hero.note":'Questions? Use the <b>/help</b> command at any time.',
+    "legend.label":"Legend:","legend.cmd":"Command","legend.syn":"Syntax","legend.feat":"Feature",
     "features.eyebrow":"Features","features.title":"Everything your table needs.",
     "features.lead":"From the invite to your first D20, GDI covers every step of your RPG session.",
     "features.items":[
-      {"img":"gdi_tickets.png","title":"Tickets","desc":"Ticket system for support and assistance inside your community."},
-      {"img":"gdi_formulario.png","title":"Forms","desc":"Customizable forms, with responses logged automatically."},
-      {"img":"gdi_rolagem.png","title":"Dice rolling","desc":"Any roll formula, with multiple rolls and modifiers."},
-      {"img":"gdi_rolagemfalada.png","title":"Spoken dice rolls","desc":"Text-to-speech commands so blind players can roll dice."},
-      {"img":"gdi_iniciativa.png","title":"Initiative system","desc":"Automatic turn order, with HP and control over NPCs and monsters."},
-      {"img":"gdi_geradordecall.png","title":"Adventure Generator","desc":"Create, edit and manage your tables and campaign sessions."},
-      {"img":"gdi_painelderolagem.png","title":"Custom panels","desc":"Tailor-made rolling systems for any setting, like Call of Cthulhu."},
-      {"img":"gdi_ficha.png","title":"Character sheet","desc":"Combat, physical, mental and extra stats, all in one place."}
+      {
+        "icon":"🎲","title":"Dice Rolling",
+        "desc":"Combine dice, flat bonuses and character attributes in a single expression. Supports exploding dice, FATE, World of Darkness and TTS for accessibility.",
+        "tags":[{t:"/r",k:"cmd"},{t:"XdY+bonus",k:"syn"},{t:"d6!",k:"syn"},{t:"dfate",k:"syn"},{t:"tts",k:"feat"},{t:"WoD",k:"feat"}]
+      },
+      {
+        "icon":"⚔️","title":"Initiative System",
+        "desc":"Automatic turn order with HP tracking and NPC/monster control. Integrated buttons to advance turns without leaving the chat.",
+        "tags":[{t:"/initiative",k:"cmd"},{t:"HP",k:"feat"},{t:"NPCs",k:"feat"},{t:"turns",k:"feat"}]
+      },
+      {
+        "icon":"📋","title":"Character Sheet",
+        "desc":"Full sheet with physical, mental and extra attributes. Apply damage and healing directly, export to JSON and import on any server.",
+        "tags":[{t:"/attributes",k:"cmd"},{t:"/sheet",k:"cmd"},{t:"/heal",k:"cmd"},{t:"/damage",k:"cmd"},{t:"JSON",k:"syn"}]
+      },
+      {
+        "icon":"🎛","title":"System Panels",
+        "desc":"Ready-made panels for systems like Call of Cthulhu and D&D. Contextual rolls with one click, no formulas needed.",
+        "tags":[{t:"/panels",k:"cmd"},{t:"Call of Cthulhu",k:"feat"},{t:"D&D",k:"feat"}]
+      },
+      {
+        "icon":"🐉","title":"Adventure Hub",
+        "desc":"Create and manage voice tables through the bot. Minimal permissions and local channels with full control for the GM.",
+        "tags":[{t:"/adventure",k:"cmd"},{t:"voice",k:"feat"},{t:"campaign",k:"feat"}]
+      },
+      {
+        "icon":"📝","title":"Dynamic Forms",
+        "desc":"Forms with button and interactive modal. Responses automatically logged to a channel or DM.",
+        "tags":[{t:"/form create",k:"cmd"},{t:"modal",k:"feat"},{t:"auto log",k:"feat"}]
+      },
+      {
+        "icon":"🎫","title":"Ticket System",
+        "desc":"Tickets in private threads with a closing log. Support, applications and organized assistance for your community.",
+        "tags":[{t:"/tickets setup",k:"cmd"},{t:"private thread",k:"feat"},{t:"log",k:"feat"}]
+      },
+      {
+        "icon":"🧮","title":"Utilities",
+        "desc":"Math expression calculator, timestamped timers and dynamic ambiance with automatic reactions to set the mood on your server.",
+        "tags":[{t:"/calc",k:"cmd"},{t:"/timer",k:"cmd"},{t:"/ambience",k:"cmd"},{t:"timestamp",k:"syn"}]
+      }
     ],
     "cta.eyebrow":"Support & Community","cta.title":"Join the adventure.",
     "community.title":"Discord community",
@@ -554,7 +537,7 @@ const i18n = {
 
 function applyLang(lang){
   const dict = i18n[lang];
-  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.documentElement.lang = lang==='pt'?'pt-BR':'en';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key = el.getAttribute('data-i18n');
     if(dict[key]) el.innerHTML = dict[key];
@@ -562,56 +545,39 @@ function applyLang(lang){
   document.querySelectorAll('[data-i18n-list]').forEach(el=>{
     const key = el.getAttribute('data-i18n-list');
     const items = dict[key];
-    if(items) el.innerHTML = items.map((f,i)=>`
-      <div class="feature-card" onclick="openLightbox('assets/${f.img}','${f.title}')">
-        <div class="feature-shot"><img src="assets/${f.img}" alt="${f.title}" loading="lazy"></div>
-        <span class="zoom-hint">⤢</span>
-        <div class="feature-body">
-          <span class="num">${String(i+1).padStart(2,'0')}</span>
-          <h3>${f.title}</h3>
-          <p>${f.desc}</p>
-        </div>
+    if(items) el.innerHTML = items.map(f=>`
+      <div class="feature-card">
+        <div class="fc-glow"></div>
+        <span class="fc-icon">${f.icon}</span>
+        <div class="fc-title">${f.title}</div>
+        <div class="fc-desc">${f.desc}</div>
+        <div class="fc-tags">${tags(f.tags)}</div>
       </div>`).join('');
   });
 }
 
 function setLang(lang){
   applyLang(lang);
-  document.getElementById('btnPT').classList.toggle('active', lang==='pt');
-  document.getElementById('btnEN').classList.toggle('active', lang==='en');
-  localStorage.setItem('gdi-lang', lang);
+  document.getElementById('btnPT').classList.toggle('active',lang==='pt');
+  document.getElementById('btnEN').classList.toggle('active',lang==='en');
+  localStorage.setItem('gdi-lang',lang);
 }
-
 function setLegalTab(tab){
-  document.getElementById('tabTos').classList.toggle('active', tab==='tos');
-  document.getElementById('tabPrivacy').classList.toggle('active', tab==='privacy');
-  document.getElementById('panelTos').classList.toggle('active', tab==='tos');
-  document.getElementById('panelPrivacy').classList.toggle('active', tab==='privacy');
+  document.getElementById('tabTos').classList.toggle('active',tab==='tos');
+  document.getElementById('tabPrivacy').classList.toggle('active',tab==='privacy');
+  document.getElementById('panelTos').classList.toggle('active',tab==='tos');
+  document.getElementById('panelPrivacy').classList.toggle('active',tab==='privacy');
 }
 
-function openLightbox(src, alt){
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightboxImg').alt = alt;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
-document.getElementById('lightboxImg').addEventListener('click', e => e.stopPropagation());
-
-const saved = localStorage.getItem('gdi-lang') || 'pt';
+const saved = localStorage.getItem('gdi-lang')||'pt';
 setLang(saved);
 
-document.getElementById('menuBtn').addEventListener('click', ()=>{
+document.getElementById('menuBtn').addEventListener('click',()=>{
   document.getElementById('navLinks').classList.toggle('open');
 });
 document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click', ()=> document.getElementById('navLinks').classList.remove('open'));
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 </script>
-
 </body>
 </html>
